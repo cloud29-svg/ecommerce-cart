@@ -1,0 +1,108 @@
+
+.bestseller {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.bestseller__eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #737373;
+  margin: 0;
+}
+
+.bestseller__heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: #252B42;
+  margin: 4px 0;
+}
+
+.bestseller__subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #737373;
+  margin: 0 0 40px;
+}
+
+.bestseller__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 183px);
+  justify-content: center;
+  gap: 19px 30px; 
+  padding: 8px 0;
+  margin-bottom: 48px;
+}
+
+.bestseller__load-more {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #23A6F0;
+  background: transparent;
+  border: 1px solid #23A6F0;
+  border-radius: 5px;
+  padding: 15px 40px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.bestseller__load-more:hover {
+  background: #23A6F0;
+  color: #fff;
+}
+
+.bestseller-status {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #737373;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.bestseller__added-msg {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #23856D;
+  text-align: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 1100px) {
+  .bestseller__grid {
+    grid-template-columns: repeat(3, 183px);
+  }
+}
+
+@media (max-width: 700px) {
+  .bestseller__grid {
+    grid-template-columns: repeat(2, 183px);
+  }
+}
+
+@media (max-width: 420px) {
+  .bestseller__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bestseller__grid .product-card {
+    width: 100%;
+  }
+}
