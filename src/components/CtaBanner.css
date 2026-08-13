@@ -1,0 +1,134 @@
+.cta {
+  width: 100%;
+  min-height: 640px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.cta__content {
+  width: 571px;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 100px;
+  padding-right: 40px;
+  background-color: #f2f3f5;
+  flex-shrink: 0;
+}
+
+.cta__eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #23a6f0;
+  margin: 0;
+  width: 209px;
+}
+
+.cta__heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #252b42;
+  margin: 0;
+  width: 100%;
+  max-width: 571px;
+}
+
+.cta__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #737373;
+  margin: 0;
+  width: 100%;
+  max-width: 447px;
+}
+
+.cta__price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  text-align: left;
+  color: #23856d;
+  margin: 0;
+}
+
+.cta__button {
+  width: 292px;
+  max-width: 100%;
+  height: 52px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  background: #23a6f0;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cta__button:hover {
+  background: #1c86c4;
+}
+
+.cta__image-wrap {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.cta__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .cta {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .cta__content {
+    width: 100%;
+    padding: 40px 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta__eyebrow,
+  .cta__heading,
+  .cta__description {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta__image-wrap {
+    width: 100%;
+    height: 300px;
+    flex: none;
+  }
+}
