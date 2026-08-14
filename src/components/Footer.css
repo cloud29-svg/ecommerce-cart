@@ -29,6 +29,7 @@
 .footer__socials svg {
   width: 24px;
   height: 24px;
+  color: #23a6f0;
 }
 
 .footer__divider {
@@ -142,7 +143,7 @@
   margin: 0 auto;
   padding: 24px 0;
   border-top: 1px solid #e6e6e6;
-  text-align: center;
+  text-align: left;
 }
 
 .footer__copyright {
@@ -169,20 +170,31 @@
 
 @media (max-width: 900px) {
   .footer__columns {
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: flex-start;
+    gap: 32px;
+  }
+
+  .footer__column {
+    width: 100%;
   }
 
   .footer__link-list {
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .footer__bottom {
+    text-align: center;
   }
 }
 
 @media (max-width: 600px) {
   .footer__top {
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
-    text-align: center;
+    text-align: left;
   }
 
   .footer__column--subscribe,
