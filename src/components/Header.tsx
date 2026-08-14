@@ -47,10 +47,10 @@ export function Header() {
           <span className="header__badge">{cartCount}</span>
         </button>
 
-        <button className="header__icon-btn" aria-label="Wishlist">
-          <Heart size={18} />
-          <span className="header__badge">{wishlistCount}</span>
-        </button>
+        <button className="header__icon-btn header__icon-btn--wishlist" aria-label="Wishlist">
+  <Heart size={18} />
+  <span className="header__badge">{wishlistCount}</span>
+</button>
       </div>
     </header>
   );

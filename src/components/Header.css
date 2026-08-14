@@ -100,8 +100,9 @@
     }
 
     .header__menu-toggle {
-        display: inline-flex;
-        order: 1;
+        display: flex;
+        order: 3;
+        margin-left: 4px;
     }
 
     .header__logo {
@@ -113,13 +114,33 @@
         gap: 12px;
     }
 
+    .header__login {
+        display: none;
+    }
+
+    .header__icon-btn {
+    color: #252b42;
+}
+
+  .header__badge {
+    display: none;
+  }
+
+    .header__icon-btn--wishlist {
+        display: none;
+    }
+
     .header__nav {
         display: none;
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        order: 3;
+        order: 4;
+    }
+
+    .header__login-icon {
+        display: none;
     }
 
     .header__nav--open {
@@ -128,7 +149,7 @@
 
     .header__link {
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
         padding: 12px 0;
         border-bottom: 1px solid #f0f0f0;
     }
