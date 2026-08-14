@@ -36,7 +36,7 @@ export const productsApi = createApi({
     }),
     getProductById: builder.query<Product, number>({
       query: (id) => `/products/${id}`,
-      providesTags: (result, error, id) => [{ type: "Product", id }],
+      providesTags: (_result, _error, id) => [{ type: "Product", id }],
     }),
   }),
 });
