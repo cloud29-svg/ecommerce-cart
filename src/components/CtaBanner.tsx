@@ -1,5 +1,4 @@
 import "./CtaBanner.css";
-import ctaImg from "../assets/utensils.png";
 
 export function CtaBanner() {
   return (
@@ -12,10 +11,6 @@ export function CtaBanner() {
         </p>
         <p className="cta__price">$16.48</p>
         <button type="button" className="cta__button">ADD YOUR CALL TO ACTION</button>
-      </div>
-
-      <div className="cta__image-wrap">
-        <img src={ctaImg} alt="Kitchen utensils in a jar" className="cta__image" />
       </div>
     </section>
   );
