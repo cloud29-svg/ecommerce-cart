@@ -1,75 +1,111 @@
-# React + TypeScript + Vite
+# E-Commerce Landing Page — Learnable 24 Front End Standardisation Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive e-commerce landing page built with React, TypeScript, and Redux Toolkit, featuring live product data pulled from the DummyJSON API.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 [View live site on Netlify](YOUR_NETLIFY_URL_HERE)
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is a landing page for an e-commerce storefront, built as part of the Learnable 24 Front End Standardisation Test. It includes:
 
-## Expanding the ESLint configuration
+- A responsive header with live cart item count
+- A top contact/announcement bar
+- A hero/CTA banner
+- A category grid
+- A bestseller products section with live data from the DummyJSON API, discount pricing, and stock/rating display
+- Featured posts, services, testimonials, and footer sections
+- Add-to-cart functionality with quantity handling, powered by Redux Toolkit
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** (Vite + TypeScript)
+- **Vanilla CSS** (BEM-style class naming, no CSS framework)
+- **Redux Toolkit** — client-side state management (cart)
+- **RTK Query** — API integration and caching (product data)
+- **DummyJSON API** — product data source
+- **Netlify** — deployment
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+src/
+├── app/              # Redux store setup and typed hooks
+├── assets/           # Images and static assets
+├── components/       # Page sections (Header, TopBar, CtaBanner, CategoryGrid,
+│                       BestsellerSection, FeaturedPosts, ServicesSection,
+│                       TestimonialSection, Footer)
+├── features/
+│   ├── cart/         # Cart Redux slice and selectors
+│   └── products/     # RTK Query API slice and ProductCard component
+├── App.tsx
+├── main.tsx
+└── index.css         # Global styles and CSS reset
 ```
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm (comes bundled with Node.js)
+
+### Installation
+
+1. Clone the repository:
+```bash
+   git clone https://github.com/cloud29-svg/ecommerce-cart.git
+   cd ecommerce-cart
+```
+
+2. Install dependencies:
+```bash
+   npm install
+```
+
+### Running Locally
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` (or the next available port, shown in your terminal).
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+This generates an optimized production build in the `dist/` folder.
+
+To preview the production build locally:
+```bash
+npm run preview
+```
+
+## Deployment
+
+This project is deployed on [Netlify](https://www.netlify.com/).
+
+**Build settings used:**
+- Build command: `npm run build`
+- Publish directory: `dist`
+
+## State Management
+
+- **Cart state** (`src/features/cart`) is managed with Redux Toolkit's `createSlice`, handling adding items, removing items, and incrementing/decrementing quantity (capped at available stock).
+- **Product data** (`src/features/products`) is fetched and cached using RTK Query's `useGetProductsQuery` hook, which handles loading and error states automatically.
+
+## Assumptions & Implementation Notes
+
+- Per the assessment brief, only the **landing page** was built — no separate cart page, checkout flow, or product detail page.
+- The wishlist icon in the header is currently a static UI element and is not connected to Redux state, as wishlist functionality was not part of the required scope.
+- Product category labels shown on product cards come directly from the DummyJSON API's `category` field.
+- Cart quantity increment/decrement and edge-case handling (e.g. empty cart) are implemented in the Redux `cartSlice` logic; since a dedicated cart view was outside the landing-page-only scope, this logic is demonstrated in the code walkthrough video rather than a visible cart page.
+
+## Author
+
+Precious Inya — [GitHub](https://github.com/cloud29-svg)
