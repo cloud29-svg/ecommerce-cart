@@ -56,6 +56,8 @@ export function ProductCard({ product, onAdded }: ProductCardProps) {
 
       <p className="product-card__title">{product.title}</p>
 
+      <p className="product-card__category">{product.category}</p>
+
       <div className="product-card__price-row">
         {hasDiscount ? (
           <>

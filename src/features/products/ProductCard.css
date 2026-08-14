@@ -68,6 +68,18 @@
   width: 100%;
 }
 
+.product-card__category {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #737373;
+  margin: 2px 0 4px;
+  text-transform: capitalize;
+}
+
 .product-card__price-row {
   display: flex;
   align-items: center;
@@ -89,7 +101,6 @@
 }
 
 .product-card__price--old {
-  text-decoration: line-through;
   color: #bdbdbd;
   font-weight: 700;
 }
