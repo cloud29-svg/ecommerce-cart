@@ -1,4 +1,4 @@
-# E-Commerce Landing Page — Learnable 24 Front End Standardisation Test
+# E-Commerce Landing Page — Learnable Front End Standardisation Test
 
 A fully responsive e-commerce landing page built with React, TypeScript, and Redux Toolkit, featuring live product data pulled from the DummyJSON API.
 
