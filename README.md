@@ -8,7 +8,7 @@ A fully responsive e-commerce landing page built with React, TypeScript, and Red
 
 ## Overview
 
-This project is a landing page for an e-commerce storefront, built as part of the Learnable 24 Front End Standardisation Test. It includes:
+This project is a landing page for an e-commerce storefront, built as part of the Learnable Front End Standardisation Test. It includes:
 
 - A responsive header with live cart item count
 - A top contact/announcement bar
