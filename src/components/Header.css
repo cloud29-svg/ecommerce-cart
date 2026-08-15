@@ -23,6 +23,10 @@
     gap: 15px;
 }
 
+.header__nav--mobile {
+    display: none;
+}
+
 .header__link {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
@@ -122,12 +126,12 @@
     }
 
     .header__icon-btn {
-    color: #252b42;
-}
+        color: #252b42;
+    }
 
-  .header__badge {
-    display: none;
-  }
+    .header__badge {
+        display: none;
+    }
 
     .header__icon-btn--wishlist {
         display: none;
@@ -138,23 +142,30 @@
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0;
+        gap: 70px;
         order: 4;
+        padding: 32px;
     }
 
     .header__login-icon {
         display: none;
     }
 
-    .header__nav--open {
+    .header__nav--mobile.header__nav--open {
         display: flex;
     }
 
     .header__link {
         width: 100%;
         justify-content: center;
-        padding: 12px 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: 22px;
         border-bottom: 1px solid #f0f0f0;
+    }
+
+    .header__nav--desktop {
+        display: none;
     }
 }
 

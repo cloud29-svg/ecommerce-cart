@@ -1,8 +1,26 @@
 import { useState } from "react";
-import { Menu, X, ShoppingCart, Heart, Search, User, ChevronDown } from "lucide-react";
+import { X, ShoppingCart, Heart, Search, User, ChevronDown } from "lucide-react";
 import { useAppSelector } from "../app/hooks";
 import { selectCartItemCount } from "../features/cart/cartSelectors";
 import "./Header.css";
+
+function HamburgerIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={4}
+      strokeLinecap="round"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="8" y1="12" x2="21" y2="12" />
+      <line x1="14" y1="18" x2="21" y2="18" />
+    </svg>
+  );
+}
 
 export function Header() {
   const cartCount = useAppSelector(selectCartItemCount);
@@ -18,10 +36,10 @@ export function Header() {
         aria-label="Toggle menu"
         onClick={() => setIsMenuOpen((prev) => !prev)}
       >
-        {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        {isMenuOpen ? <X size={22} /> : <HamburgerIcon size={22} />}
       </button>
 
-      <nav className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
+      <nav className={`header__nav header__nav--desktop ${isMenuOpen ? "header__nav--open" : ""}`}>
         <a href="/" className="header__link">Home</a>
         <a href="/" className="header__link">
           Shop <ChevronDown size={14} className="header__arrow" />
@@ -30,6 +48,13 @@ export function Header() {
         <a href="/" className="header__link">Blog</a>
         <a href="/" className="header__link">Contact</a>
         <a href="/" className="header__link">Pages</a>
+      </nav>
+
+      <nav className={`header__nav header__nav--mobile ${isMenuOpen ? "header__nav--open" : ""}`}>
+        <a href="/" className="header__link">Home</a>
+        <a href="/" className="header__link">Product</a>
+        <a href="/" className="header__link">Pricing</a>
+        <a href="/" className="header__link">Contact</a>
       </nav>
 
       <div className="header__actions">
@@ -48,9 +73,9 @@ export function Header() {
         </button>
 
         <button className="header__icon-btn header__icon-btn--wishlist" aria-label="Wishlist">
-  <Heart size={18} />
-  <span className="header__badge">{wishlistCount}</span>
-</button>
+          <Heart size={18} />
+          <span className="header__badge">{wishlistCount}</span>
+        </button>
       </div>
     </header>
   );
