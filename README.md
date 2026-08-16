@@ -4,7 +4,7 @@ A fully responsive e-commerce landing page built with React, TypeScript, and Red
 
 ## Live Demo
 
-🔗🔗 [View live site on Netlify](https://zingy-tapioca-e0f653.netlify.app/)
+🔗🔗 [View live site on Netlify](🔗 [View live site on Netlify](https://thunderous-queijadas-b78560.netlify.app/))
 
 ## Overview
 
