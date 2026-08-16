@@ -48,9 +48,25 @@ export function BestsellerSection() {
       )}
 
       {lastAdded && (
-        <p className="bestseller__added-msg" role="status" aria-live="polite">
-          Added {lastAdded.title} to cart
-        </p>
+        <div className="cart-toast" role="status" aria-live="polite">
+          <img
+            src={lastAdded.thumbnail}
+            alt={lastAdded.title}
+            className="cart-toast__image"
+          />
+          <div className="cart-toast__body">
+            <p className="cart-toast__label">Successfully added to basket</p>
+            <p className="cart-toast__title">{lastAdded.title}</p>
+            <p className="cart-toast__price">${lastAdded.price.toFixed(2)}</p>
+          </div>
+          <button
+            className="cart-toast__close"
+            aria-label="Dismiss notification"
+            onClick={() => setLastAdded(null)}
+          >
+            ×
+          </button>
+        </div>
       )}
     </section>
   );
