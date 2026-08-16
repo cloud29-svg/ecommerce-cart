@@ -95,7 +95,8 @@
 
 @media (max-width: 900px) {
   .cta {
-    min-height: 620px;
+    min-height: 560px;
+    background-position: 60% 70%;
   }
 
   .cta__content {
