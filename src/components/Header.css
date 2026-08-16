@@ -130,7 +130,7 @@
     }
 
     .header__badge {
-        display: none;
+        display: flex;
     }
 
     .header__icon-btn--wishlist {
