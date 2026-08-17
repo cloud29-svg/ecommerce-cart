@@ -2,6 +2,7 @@ import { useState } from "react";
 import { X, ShoppingCart, Heart, Search, User, ChevronDown } from "lucide-react";
 import { useAppSelector } from "../app/hooks";
 import { selectCartItemCount } from "../features/cart/cartSelectors";
+import { CartDropdown } from "../features/cart/CartDropdown";
 import "./Header.css";
 
 function HamburgerIcon({ size = 22 }: { size?: number }) {
@@ -26,6 +27,7 @@ export function Header() {
   const cartCount = useAppSelector(selectCartItemCount);
   const wishlistCount = 0;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <header className="header">
@@ -67,10 +69,17 @@ export function Header() {
           <Search size={18} />
         </button>
 
-        <button className="header__icon-btn" aria-label="Cart">
-          <ShoppingCart size={18} />
-          <span className="header__badge">{cartCount}</span>
-        </button>
+        <div style={{ position: "relative" }}>
+          <button
+            className="header__icon-btn"
+            aria-label="Cart"
+            onClick={() => setIsCartOpen((prev) => !prev)}
+          >
+            <ShoppingCart size={18} />
+            <span className="header__badge">{cartCount}</span>
+          </button>
+          {isCartOpen && <CartDropdown onClose={() => setIsCartOpen(false)} />}
+        </div>
 
         <button className="header__icon-btn header__icon-btn--wishlist" aria-label="Wishlist">
           <Heart size={18} />
